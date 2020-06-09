@@ -1,0 +1,1 @@
+python generate_disp.py --data_path ~/Kitti/object/training/ --split_file ~/Kitti/object/trainval.txt

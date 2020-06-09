@@ -1,0 +1,3 @@
+python ./psmnet/finetune_3d.py --maxdisp 192 --model stackhourglass --datapath /home/maxim/Kitti/object/training/ --split_file /home/maxim/Kitti/object/train.txt --epochs 300 --lr_scale 50 --loadmodel ./pretrained_sceneflow.tar --savemodel ./psmnet/kitti_3d/  --btrain 12
+
+python ./psmnet/submission.py --maxdisp 192 --loadmodel ./pretrained_sceneflow.tar --datapath /home/maxim/Kitti/object/testing/ --save_path /home/maxim/Kitti/object/testing/predict_disparity

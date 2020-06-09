@@ -1,0 +1,10 @@
+[2019-10-21 16:35:09 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-21 16:39:36 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-21 17:00:27 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-21 17:03:31 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 13:30:07 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 13:39:33 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 13:45:45 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 14:15:21 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 14:15:56 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+[2019-10-29 14:17:26 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar

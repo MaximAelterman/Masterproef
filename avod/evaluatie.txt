@@ -1,0 +1,8 @@
+Evaluatie van gegeven config (inferentie + resultaten voor evaluatie):
+	python avod/experiments/run_evaluation.py --pipeline_config=avod/configs/pyramid_cars_with_aug_example_scratch_300.config
+
+Visualiseren van voorspellingen (genereren van predictions/images_2d):
+	python demos/show_predictions_2d.py 
+
+evaluatie in avod/avod/data/outputs/.../predicions/kitti_native_eval: 
+	./evaluate_object_3d_offline ~/Kitti/object/training/label_2 0.1/120000

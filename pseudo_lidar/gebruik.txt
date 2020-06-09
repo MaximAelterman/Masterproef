@@ -1,0 +1,9 @@
+pseudo lidar genereren:
+python ./preprocessing/generate_lidar.py --calib_dir ~/Kitti/object/training/calib/ --save_dir ~/Kitti/object/training/pseudo-lidar_velodyne/ --disparity_dir ~/Kitti/object/training/predict_disparity --max_high 1
+
+planes genereren:
+python ./preprocessing/kitti_process_RANSAC.py --calib ~/Kitti/object/training/calib/ --lidar_dir ~/Kitti/object/training/velodyne/ --planes_dir ~/Kitti/object/training/pseudo-lidar_planes/
+
+psmnet
+
+python ./psmnet/submission.py --loadmodel ./psmnet/kitti_3d/finetune_81.tar --datapath ~/Kitti/object/training/ --save_path ~/Kitti/object/training/predict_disparity

@@ -1,0 +1,50 @@
+python ./psmnet/finetune_3d.py --maxdisp 192 \
+     --model stackhourglass \
+     --datapath ./KITTI/object/training/ \
+     --split_file ./KITTI/object/train.txt \
+     --epochs 300 \
+     --lr_scale 50 \
+     --loadmodel ./pretrained_sceneflow.tar \
+     --savemodel ./psmnet/kitti_3d/  --btrain 12
+
+[2019-10-21 17:03:31 finetune_3d.py:77] INFO     load model ./pretrained_sceneflow.tar
+./psmnet/kitti_3d/training.log
+Number of model parameters: 5224768
+Traceback (most recent call last):
+  File "./psmnet/finetune_3d.py", line 204, in <module>
+    main()
+  File "./psmnet/finetune_3d.py", line 168, in main
+    loss = train(imgL_crop, imgR_crop, disp_crop_L)
+  File "./psmnet/finetune_3d.py", line 103, in train
+    output1, output2, output3 = model(imgL, imgR)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/parallel/data_parallel.py", line 150, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/psmnet/models/stackhourglass.py", line 111, in forward
+    refimg_fea = self.feature_extraction(left)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/psmnet/models/submodule.py", line 121, in forward
+    output_raw  = self.layer2(output)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/psmnet/models/submodule.py", line 36, in forward
+    out = self.conv2(out)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/module.py", line 541, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/conv.py", line 345, in forward
+    return self.conv2d_forward(input, self.weight)
+  File "/home/maxim/Desktop/masterproef/pseudo_lidar/env/local/lib/python2.7/site-packages/torch/nn/modules/conv.py", line 342, in conv2d_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: CUDA out of memory. Tried to allocate 24.00 MiB (GPU 0; 1.96 GiB total capacity; 995.66 MiB already allocated; 20.12 MiB free; 10.34 MiB cached)
